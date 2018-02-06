@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script>
+    
+    var tmp = new Date();
+
+	function f(){
+		console.log(tmp);
+		if (false) {
+			var tmp = 'hello world';
+		}
+
+	}
+
+	f();
+
+
+	console.log('-----------------------------------');
+
+	function f1(){
+
+		let n = 5;
+		if (true) {
+			let n = 10;  //es6 块级作用域内层作用域不影响外层作用域
+		}
+		console.log(n);
+	}
+
+	f1();
+
+
+	console.log('1111111111111111111111111111111');
+
+	function fun(){
+
+		var n = 5;
+		if (true) {
+			var n = 10;  // 而在 es5 那么n的值将会被重新赋值为 10
+		}
+		console.log(n);
+	}
+	fun();
+
+
+	console.log('22222222222222222222222222222222');
+
+	(function(){
+		var tmp = 'Hello World';
+		console.log(tmp);
+	})();
+
+	// 在 ES6 语法中，可以直接使用 {} 内定义变量，这个的作用等同于 ES5 的立即函数
+
+	{
+		let tmp = 'Smile Enheng';
+		console.log(tmp);
+	}
+
+	/*
+	   ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6规定，块级作用域
+	   中，函数声明语句的行为类似let，在块级作用域之外不可引用
+
+	*/
+
+	//Demo:
+	function h(){
+		console.log('I am outside');
+	}
+
+	(function(){
+        if (false) {
+        	function h(){
+        		// 重复声明一次函数 h
+                console.log('I am outside');   		
+        	}
+        }
+
+
+        h();
+
+	})();
+	
+
+</script>	
+</body>
+</html>

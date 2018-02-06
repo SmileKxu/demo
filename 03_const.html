@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+ /*
+    const 声明一个只读的常量。一旦声明，常量的值就不能改变。
+
+    const 声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值
+    若只声明不赋值，那么会报错
+ */
+
+ // const a; //Error
+
+ /*
+    const 命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+    大白话: const 声明的常量不存在变量声明提升，不然报错 QAQ。
+ */
+  
+ /*
+ if (true) {
+    console.log(MAX); //ReferenceError: MAX is not defined
+    const MAX = 5;   
+ }
+ */
+
+ // const 声明的常量，也与let一样不可重复声明。
+
+ let one = 'Hello';
+ const two = 'World';
+ console.log(one);
+ console.log(two);
+
+ // let one = 123;
+ // const one = 456; // 声明的变量不可重复声明，报错
+
+ var a = 1;
+ console.log(window.a); //全局变量a由var命令声明，所以它是顶层对象的属性；
+ 
+ let b = 1;
+ console.log('b = ', window.b); // b 是由let 声明的全局变量，所以他不是顶层对象的属性，返回 undefined
+
+ 
+
+	
+
+</script>	
+</body>
+</html>
